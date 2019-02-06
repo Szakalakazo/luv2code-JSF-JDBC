@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" 
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+		
+
+<h:head>
+	<title>Simple response</title>
+	<meta charset="utf-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<div class="container" style="paddnig: 10px">
+
+		<h3>The student is confirmed: #{studentBean.firstName}
+			#{studentBean.lastName}!</h3>
+		<p>The student comes from: #{studentBean.country}.</p>
+		<p>The student's favorite programming language is: #{studentBean.favoriteLanguage}.</p>
+		
+		
+		
+		<p>The student's favorite text editor is:</p>
+		<ul>
+			<ui:repeat var="tempEditor" value="#{studentBean.favoriteTextEditors}">
+				<li>#{tempEditor}</li>
+			</ui:repeat>		
+		</ul>
+	</div>
+
+</h:body>
+</html>

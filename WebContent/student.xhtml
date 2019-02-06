@@ -1,0 +1,71 @@
+<!DOCTYPE xhtml>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+	<title>Student registration form</title>
+	<meta charset="utf-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+
+	<div class="navbar navbar-inverse">
+		<div class="navbar-brand">simple.xhtml</div>
+	</div>
+
+
+	<div class="container" style="padding-left: 0px">
+		<h:form>
+			<ul style="list-style-type: circle; list-style-position: outside;">
+
+				<li><h4>Student details:</h4>
+					<p>First name:</p> <h:inputText id="firstName"
+						value="#{studentBean.firstName}" /> <br /> <br />
+					<p>Last name:</p> <h:inputText id="lastName"
+						value="#{studentBean.lastName}" /> <br /> <br /></li>
+
+				<!-- Country list menu -->
+				<li><h4>Country of origin:</h4> <h:selectOneMenu
+						value="#{studentBean.country}">
+						<f:selectItems value="#{studentBean.countryOptions}" />
+					</h:selectOneMenu></li>
+				<br />
+
+
+				<li>
+					<!-- Radio-button --> <h:selectOneRadio
+						value="#{studentBean.favoriteLanguage}">
+						<f:selectItem itemValue="Java" itemLabel="Java" />
+						<f:selectItem itemValue="C++" itemLabel="C++" />
+						<f:selectItem itemValue="PHP" itemLabel="PHP" />
+						<f:selectItem itemValue="JS" itemLabel="JS" />
+					</h:selectOneRadio>
+				</li>
+				<br />
+
+				<li>
+					<!-- Checkboxes --> <h:selectManyCheckbox
+						value="#{studentBean.favoriteTextEditors}">
+						<f:selectItem itemValue="Atom " itemLabel="Atom" />
+						<f:selectItem itemValue="notepad++" itemLabel="notepad++" />
+						<f:selectItem itemValue="Bracket" itemLabel="Bracket" />
+					</h:selectManyCheckbox>
+				</li>
+				<br />
+
+			</ul>
+
+
+			<!-- Submit button -->
+			<h:commandLink id="btnsearch" action="student-confirmation"
+				styleClass="btn btn-primary" style="padding-left:">
+				<i class="icon-search"></i> Submit </h:commandLink>
+		</h:form>
+	</div>
+
+</h:body>
+</html>

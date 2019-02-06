@@ -10,9 +10,9 @@ public class StudentBean {
 	private String firstName;
 	private String lastName;
 	private String country;
-	List<String> countryOptions;
 	private String favoriteLanguage;
 	private String[] favoriteTextEditors;
+	List<String> countryOptions;
 
 
 	// create no-args constructor
@@ -20,11 +20,13 @@ public class StudentBean {
 	
 	public StudentBean() {
 		countryOptions = new ArrayList<>();
-		countryOptions.add("Brazli");
 		countryOptions.add("France");
 		countryOptions.add("Germany");
 		countryOptions.add("Poland");
 		countryOptions.add("UK");
+		firstName = "Mery";
+		lastName = "Poppins";
+		favoriteLanguage = "Java";
 				
 	}
 	

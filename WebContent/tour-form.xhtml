@@ -1,0 +1,34 @@
+<!DOCTYPE xhtml>
+<html lang="en" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+	<title>Tour form</title>
+	<meta charset="utf-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+
+</h:head>
+<h:body>
+	<h:form>
+		<div class="navbar navbar-inverse">
+			<div class="navbar-brand">Validation Form</div>
+		</div>
+		
+		<h3>Select a tour:</h3>
+		<h:selectOneMenu value="#{tourBean.typeOfTour}">
+			<f:selectItem itemValue="City" itemLabel="City"/>
+			<f:selectItem itemValue="Country" itemLabel="Country"/>	
+		</h:selectOneMenu>
+		
+		<h:commandLink id="btnsearch" action="#{tourBean.startTheTour()}"
+					styleClass="btn btn-primary" style="padding-left:">
+					<i class="icon-search"></i> Start tour! </h:commandLink>
+
+
+
+	</h:form>
+</h:body>
+</html>

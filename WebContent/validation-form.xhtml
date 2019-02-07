@@ -1,0 +1,86 @@
+<!DOCTYPE xhtml>
+<html lang="en" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+	<title>Validation form</title>
+	<meta charset="utf-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css"/>
+	<style>
+		.error{color: red}
+	</style>
+	
+</h:head>
+
+<h:body>
+	<h:form>
+	<div class="navbar navbar-inverse">
+		<div class="navbar-brand">Validation Form</div>
+	</div>
+		<div class="container">
+		
+			<ul>
+				<li>
+				<p>First Name:</p>
+				<h:inputText value="#{validationBean.firstName}" 
+							 label="First Name" />
+							 
+				<p>Last Name:</p>
+				<h:inputText value="#{validationBean.lastName}" 
+							 label="Last Name" 
+							 required="true"
+							 id="last_name"
+							 requiredMessage="Your last name is mandatory."/>
+				<h:message for="last_name" styleClass="error" />
+						
+				<p>Free passes:</p>
+				<h:inputText value="#{validationBean.freePasses}" 
+							 label="Free Passes"
+							 id="free_passes">
+							 
+				<f:validateLongRange minimum="0" maximum="10"/>			
+				</h:inputText>	
+				<h:message for="free_passes" styleClass="error"/>
+				
+				<p>Postal Code:</p>
+				<h:inputText value="#{validationBean.postalCode}"
+							 label="Postal Code"
+							 id="postal_code">
+							 
+				<f:validateLength minimum="5" maximum="5"/>				
+				</h:inputText>
+				<h:message for="postal_code" styleClass="error"/>
+				
+				
+				<p>Phone number:</p>
+				<h:inputText value="#{validationBean.phoneNumber}" 
+							 label="Phone Number"
+							 id="phone_number"
+							 validatorMessage="Phone number must follow xxx-xxx-xxx">
+					<f:validateRegex pattern="\d{3}-\d{3}-\d{3}"/>
+					</h:inputText>
+					<h:message for="phone_number" styleClass="error"/>
+					
+				
+								 
+
+				
+				<h:commandLink id="btnsearch" action="validation-response"
+					styleClass="btn btn-primary" style="padding-left:">
+					<i class="icon-search"></i> Submit </h:commandLink>
+										
+				<!-- 					 
+				<h:commandButton value="Submit" action="validation-response"/>
+				 -->					 
+				</li>
+			</ul>
+		</div>
+	</h:form>
+</h:body>
+</html>
+
+
+

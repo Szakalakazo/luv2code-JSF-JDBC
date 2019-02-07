@@ -1,0 +1,30 @@
+<!DOCTYPE xhtml>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+	<title>Validation response</title>
+	<meta charset="utf-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+</h:head>
+
+<h:body>
+	<div class="container">
+		<h3>
+			The student is confirmed: #{validationBean.firstName}
+			#{validationBean.lastName} <br /> 
+			Post Code:
+			#{validationBean.postalCode} <br /> 
+			Number of passes:
+			#{validationBean.freePasses} <br /> 
+			Phone number:
+			#{validationBean.phoneNumber}
+		</h3>
+
+	</div>
+
+</h:body>
+</html>

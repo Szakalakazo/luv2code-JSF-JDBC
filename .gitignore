@@ -8,3 +8,4 @@ target/*
 build/*
 WebContent/META-INF/*
 WebContent/lib/*
+.metadata/

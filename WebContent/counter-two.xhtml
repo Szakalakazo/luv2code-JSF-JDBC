@@ -17,18 +17,18 @@
 	<hr />
 	<br />
 		
-		Counter value: #{scopeBean.value}
+		Counter value: #{applicationScopeBean.value}
 		
 	<hr />
 	<br />
 	
 	<h:form>
 
-	<h:commandLink id="btnsearch-plus" action="#{scopeBean.increment()}"
+	<h:commandLink id="btnsearch-plus" action="#{applicationScopeBean.increment()}"
 					styleClass="btn btn-primary" style="padding-left:">
 					<i class="icon-search"></i> ++ </h:commandLink>
 					
-	<h:commandLink id="btnsearch-minus" action="#{scopeBean.decrement()}"
+	<h:commandLink id="btnsearch-minus" action="#{applicationScopeBean.decrement()}"
 					styleClass="btn btn-primary" style="padding-left:">
 					<i class="icon-search"></i> -- </h:commandLink>
 

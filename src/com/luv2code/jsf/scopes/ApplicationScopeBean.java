@@ -5,11 +5,11 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 @ApplicationScoped
-public class ScopeBean {
+public class ApplicationScopeBean {
 	
 	private int value = 0;
 	
-	public ScopeBean() {
+	public ApplicationScopeBean() {
 	}
 
 	public int getValue() {

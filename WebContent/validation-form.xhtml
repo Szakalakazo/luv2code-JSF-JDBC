@@ -61,11 +61,16 @@
 							 id="phone_number"
 							 validatorMessage="Phone number must follow xxx-xxx-xxx">
 					<f:validateRegex pattern="\d{3}-\d{3}-\d{3}"/>
-					</h:inputText>
-					<h:message for="phone_number" styleClass="error"/>
+				</h:inputText>
+				<h:message for="phone_number" styleClass="error"/>
 					
 				
-								 
+				<p>Course code:</p>
+				<h:inputText value="#{validationBean.courseCode}" 
+							 label="Course Code"
+							 id="course_code"
+							 validator="#{validationBean.validateTheCourseCode}"/>
+				<h:message for="course_code" styleClass="error"/>									 
 
 				
 				<h:commandLink id="btnsearch" action="validation-response"
